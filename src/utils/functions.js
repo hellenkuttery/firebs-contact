@@ -1,20 +1,14 @@
-import firebase from "./firebase"
-import { getDatabase, ref, set } from "firebase/database";
-
+import { getDatabase, ref, update ,child,push} from "firebase/database";
 
 export const addInfo=(info)=> {
-    console.log(info)
-    const db = getDatabase(firebase);
-    set(ref(db, 'contact/'), {
-        username: info.username,
-        phoneNumber:info.phoneNumber ,
-        gender:info.gender });
-
+  const db = getDatabase();
+  const addUser = {
+    username:info.username,
+    phoneNumber:info.phoneNumber ,
+    gender:info.gender
+  };
+  const newUserKey = push(child(ref(db), 'contact')).key;
+  const updates = {};
+  updates['contact' + newUserKey] = addUser;
+  return update(ref(db), updates);
   }
-
-//   const dbRef = ref(db, `users/{userUid}`)
-// update(dbRef, {displayName: "Firebase9_IsCool"}).then(() => {
-//   console.log("Data updated");
-// }).catch((e) => {
-//   console.log(e);
-// })

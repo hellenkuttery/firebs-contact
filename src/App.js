@@ -7,7 +7,7 @@ function App() {
   const [info,setInfo]=useState(initialValues)
   
   const handleFormSubmit=()=>{
-    console.log("add info")
+  
     addInfo(info);
    
   };

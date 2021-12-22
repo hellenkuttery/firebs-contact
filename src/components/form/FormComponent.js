@@ -33,6 +33,7 @@ setInfo({...info,[name]:value.toUpperCase()})
             <h2 className="contact-header">Add Contact</h2>
             <Form size="large" onSubmit={handleFormSubmit}>
               <Segment stacked>
+            
                 <Form.Input
                   fluid
                   name="username"
@@ -63,6 +64,7 @@ setInfo({...info,[name]:value.toUpperCase()})
                   value={info.gender.toLowerCase()}
                   required
                 />
+               
                 <Button color="teal" fluid size="large">
                   Add
                 </Button>

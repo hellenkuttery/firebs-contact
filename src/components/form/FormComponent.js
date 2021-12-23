@@ -66,7 +66,7 @@ setInfo({...info,[name]:value.toUpperCase()})
                 />
                
                 <Button color="teal" fluid size="large">
-                  Add
+                  {info.id ? "Update" : "Add"}
                 </Button>
               </Segment>
         </Form>

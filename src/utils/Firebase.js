@@ -1,16 +1,13 @@
 import { initializeApp } from "firebase/app";
-// import {getDatabase} from "firebase/database";
-
-
 const firebaseConfig = {
-  apiKey: "AIzaSyBlPigizlLavoZy_J7LRV6d1ZxGP1fwacs",
-  authDomain: "fire-contact-38dab.firebaseapp.com",
-  databaseURL: "https://fire-contact-38dab-default-rtdb.firebaseio.com",
-  projectId: "fire-contact-38dab",
-  storageBucket: "fire-contact-38dab.appspot.com",
-  messagingSenderId: "999909912843",
-  appId: "1:999909912843:web:08bae176db0885bec3720e"
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  databaseURL: process.env.REACT_APP_DATABASE_URL,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
-  const firebase= initializeApp(firebaseConfig)
+const firebase= initializeApp(firebaseConfig)
 
 export default firebase;
